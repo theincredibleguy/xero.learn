@@ -12,8 +12,7 @@ import com.ac.components.CustomTrie;
 public class TrieFactory {
 	
 	public static CustomTrie generateTrie(int messageId, String message){
-		CustomTrie ct = new CustomTrie();
-		ct.setMsgId(messageId);
+		CustomTrie ct = new CustomTrie(messageId);
 		StringTokenizer st = new StringTokenizer(message);
 		while(st.hasMoreElements()){
 			ct.addBranch(st.nextToken());
