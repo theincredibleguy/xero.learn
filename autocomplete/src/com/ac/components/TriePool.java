@@ -1,5 +1,6 @@
 package com.ac.components;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -10,7 +11,7 @@ import java.util.HashMap;
 public class TriePool {
 
 	private static TriePool triePool;
-	private HashMap<Integer, CustomTrie> trieList = new HashMap<Integer, CustomTrie>();
+	private HashMap<Integer, CustomTrie> poolTrieList = new HashMap<Integer, CustomTrie>();
 	private TriePool(){}
 
 	public static synchronized TriePool getInstance(){
@@ -21,6 +22,17 @@ public class TriePool {
 	}
 	
 	public void addCustomTrie(CustomTrie trie){
-		trieList.put(trie.getMsgId(), trie);
+		poolTrieList.put(trie.getMsgId(), trie);
+	}
+	
+	public ArrayList<CustomTrie> getTries(ArrayList<Integer> ids){
+		ArrayList<CustomTrie> trieList = new ArrayList<CustomTrie>();
+		CustomTrie ct = null;
+		for(int id: ids){
+			ct = poolTrieList.get(id);
+			if(ct!=null)
+				trieList.add(ct);			
+		}
+		return trieList;
 	}
 }

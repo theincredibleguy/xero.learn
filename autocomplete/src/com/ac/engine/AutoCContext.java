@@ -5,6 +5,11 @@ import com.ac.interfaces.IContext;
 
 public class AutoCContext implements IContext {
 
+	private AutoCEngine acEngine;
+	
+	public AutoCContext(){
+	}
+	
 	@Override
 	public Object getMessages(String partMessage)
 			throws AutoCException {
