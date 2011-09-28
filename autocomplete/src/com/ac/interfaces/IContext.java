@@ -1,11 +1,11 @@
 package com.ac.interfaces;
 
-import com.ac.exceptions.NoMessageFoundException;
+import com.ac.exceptions.AutoCException;
 
 public interface IContext {
-	Object getMessages(String partMessage) throws NoMessageFoundException;
+	Object getMessages(String partMessage) throws AutoCException;
 	
-	Object getMessagesC2(String partMessage) throws NoMessageFoundException;
+	Object getMessagesC2(String partMessage) throws AutoCException;
 	
 	void enableC2();
 }
