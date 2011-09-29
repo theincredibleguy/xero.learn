@@ -35,4 +35,10 @@ public class TriePool {
 		}
 		return trieList;
 	}
+	
+	public ArrayList<CustomTrie> getAllTries(){
+		ArrayList<CustomTrie> trieList = null;
+		trieList = (ArrayList)poolTrieList.values();
+		return trieList;
+	}
 }

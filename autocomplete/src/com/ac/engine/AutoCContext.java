@@ -7,8 +7,15 @@ public class AutoCContext implements IContext {
 
 	private AutoCEngine acEngine;
 	
+	
 	public AutoCContext(){
+		init();
 	}
+	
+	private void init(){
+		
+	}
+	
 	
 	@Override
 	public Object getMessages(String partMessage)
