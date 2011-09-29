@@ -1,8 +1,20 @@
 package com.ac.interfaces;
 
-public interface Engine {
+import com.ac.exceptions.AutoCException;
 
-	void start();
-	void stop();
-	void updateIndex();
+/**
+ * defines engine
+ * @author Administrator
+ *
+ */
+public interface Engine {
+	
+	void start() throws AutoCException;
+	
+	void stop() throws AutoCException;
+	
+	void pause() throws AutoCException;
+	
+	void resume() throws AutoCException;
+
 }
