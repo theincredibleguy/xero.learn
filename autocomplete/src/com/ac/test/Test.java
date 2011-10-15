@@ -1,9 +1,11 @@
 package com.ac.test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 import com.ac.components.CustomTrie;
+import com.ac.components.CustomTrieUsingLeaf;
 import com.ac.util.TrieFactory;
 
 public class Test {
@@ -19,6 +21,10 @@ public class Test {
 			}
 			System.out.print(" ");
 		}
+		
+		CustomTrieUsingLeaf ctul = TrieFactory.generateLeafTrie(1234,"the quick brown fox jumped over the lazy dog!!!");
+		ctul.showTree();
+		
 	}
 
 }

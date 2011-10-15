@@ -25,5 +25,9 @@ public class Root implements Node{
 	public LeafType getType() {
 		return type;
 	}
-	
+
+	@Override
+	public String getValue() {
+		return msgId+"";
+	}
 }
