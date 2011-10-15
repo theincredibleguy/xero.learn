@@ -1,19 +1,23 @@
 package com.ac.components;
 
-import com.ac.interfaces.TrieNode;
+import com.ac.interfaces.Node;
 
-public class Leaf implements TrieNode{
+
+public class Leaf implements Node{
 	
-	Leaf parent, child;
-	String value;
+	Node parent, child;
+	char value;
 	LeafType type;
 	
-	public Leaf(){}
-	
-	public Leaf(Leaf parent, Leaf child, String value, LeafType type){
+	public Leaf(Node parent, char value){
 		this.parent = parent;
-		this.child = child;
 		this.value = value;
-		this.type = type;
+		this.type = LeafType.LEAF;
+	}
+	
+
+	@Override
+	public LeafType getType() {
+		return type;
 	}
 }

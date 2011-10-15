@@ -2,17 +2,28 @@ package com.ac.components;
 
 import java.util.ArrayList;
 
-import com.ac.interfaces.TrieNode;
+import com.ac.interfaces.Node;
 
-public class Root implements TrieNode{
+
+public class Root implements Node{
 	
-	private String msgId;
+	private int msgId;
 	private ArrayList children;
+	private LeafType type;
 	
-	public Root(String msgId){
+	public Root(int msgId){
 		this.msgId = msgId;
 		children = new ArrayList();
-		
+		type = LeafType.ROOT;
+	}
+	
+	public void addChild(Node child){
+		children.add(child);
 	}
 
+	@Override
+	public LeafType getType() {
+		return type;
+	}
+	
 }
