@@ -11,7 +11,7 @@ public class LeafTriePool {
 	private TriePoolProcess poolProcess;
 	private TrieInputProcessor inputProcessor;
 	private HashMap<String, ArrayList<Leaf>> leafPool;
-	private String criteria;
+	private StringBuilder bufferedCriteria;
 	
 	private LeafTriePool(){
 		heapOfLeaves = new ArrayList<Leaf>();
@@ -37,8 +37,17 @@ public class LeafTriePool {
 		poolProcess.notify();
 	}
 	
+	public ArrayList<Leaf> searchFor(String string){
+		if(string.equals(""))
+			bufferedCriteria.delete(0, bufferedCriteria.length()-1);
+		else{
+			inputProcessor.notify();
+		}
+		return processedLeaves;
+	}
 	
-	class TriePoolProcess extends Thread {
+	
+	private class TriePoolProcess extends Thread {
 		
 		@Override
 		public void run() {
@@ -66,13 +75,24 @@ public class LeafTriePool {
 		}
 	}
 	
-	class TrieInputProcessor extends Thread {
+	private class TrieInputProcessor extends Thread {
 		
 		@Override
 		public void run() {
 			synchronized(this){
-				
+				while(true){
+					
+				}
 			}
 		}
+		
+		private ArrayList<Leaf> filter(String str, ArrayList<Leaf> filteredPool){
+			for(int i=0;i<str.length();i++){
+//				filteredPool = filteredPool.get(str.charAt(i));
+				
+			}
+			return null;
+		}
+		
 	}
 }
