@@ -24,5 +24,4 @@ public class LocationList extends ArrayList<XY> {
 		}
 		return false;
 	}
-
 }

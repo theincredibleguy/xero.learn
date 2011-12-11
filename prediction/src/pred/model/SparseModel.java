@@ -1,6 +1,5 @@
 package pred.model;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import pred.datastructures.LocationList;
@@ -92,7 +91,7 @@ public class SparseModel {
 	public void resetAllLocations() {
 		for(XY xy: locations){
 			xy.setY(-1);
+//			xy.setY(xy.getY()+1);
 		}
-		
 	}
 }

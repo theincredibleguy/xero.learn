@@ -15,10 +15,6 @@ public class SparseIndex {
 	private HashMap<Character, SparseModel> baseIndex = new HashMap<Character,SparseModel>();
 	private SparseModel currentModel = null;
 	private StringBuffer currentResult = new StringBuffer();
-	//populate
-	//search
-	//add
-	//remove
 	
 	public SparseIndex(){
 		initialize();
@@ -78,6 +74,7 @@ public class SparseIndex {
 		}
 		
 		
+		
 		List<String> results = new ArrayList<String>();
 		for(XY pos: currentModel.getAllLocations())	{
 			String ret = searchSuffix(currentModel, pos);
@@ -90,7 +87,6 @@ public class SparseIndex {
 	}
 	
 	public void resetSparseModel(String criteria){
-//		System.out.println("shuffling with critera " + criteria);
 		
 		for(int i=0;i<criteria.length();i++){
 			Character c = criteria.charAt(i);
@@ -99,7 +95,6 @@ public class SparseIndex {
 		}
 		
 		currentModel.resetAllLocations();
-//		currentModel.show();
 		
 	}
 	
@@ -121,7 +116,6 @@ public class SparseIndex {
 			}			
 		}
 		return null;
-
 	}
 	
 	
@@ -156,19 +150,9 @@ public class SparseIndex {
 	}
 	
 	public static void main(String[] args) {
-		long t = System.currentTimeMillis();
 		SparseIndex si = new SparseIndex();
-		for(int i=0;i<Data.s1.length;i++){
-//			System.out.println("message number " + i);
-			
-			si.populate(i, Data.s1[i]);
-		}
-		long tt = System.currentTimeMillis();
-		System.out.println(tt-t);
-		
+		si.show();
 		System.out.println(si.search("Div"));
-//		si.show();
 	}
 
 }
-;
